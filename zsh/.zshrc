@@ -12,3 +12,7 @@ eval "$(rbenv init -)"
 unalias rm
 unalias cp
 unsetopt CORRECT_ALL
+
+# Configure LaTeX
+export LATEX_HOME="/usr/local/texlive"
+export PATH="$LATEX_HOME/2015/bin/x86_64-darwin:$PATH"

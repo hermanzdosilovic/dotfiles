@@ -1,5 +1,5 @@
 _prompt_start_time=$SECONDS
-_command_issued=true
+_command_issued=false
 
 function prompt_print_elapsed_time {
   local end_time=$(( SECONDS - _prompt_start_time ))
