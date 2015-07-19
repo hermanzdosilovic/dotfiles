@@ -2,7 +2,7 @@
 source variables.sh
 
 for file in $(ls .z* 2> /dev/null); do
-  if [[ -f $HOME/$file ]]; then
+  if [[ -f $HOME/$file ]] || [[ -h $HOME/$file ]]; then
     echo "zsh: removing $HOME/$file [OK]"
     rm "$HOME/$file"
   else
@@ -10,7 +10,7 @@ for file in $(ls .z* 2> /dev/null); do
   fi
 done
 
-if [[ -f "$prezto/$theme_name" ]]; then
+if [[ -f "$prezto/$theme_name" ]] || [[ -h "$prezto/$theme_name" ]]; then
   echo "zsh: removing $prezto/$theme_name [OK]"
   rm "$prezto/$theme_name"
 else
