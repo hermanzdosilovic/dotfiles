@@ -14,5 +14,5 @@ if [[ -f "$prezto/$theme_name" ]] || [[ -h "$prezto/$theme_name" ]]; then
   echo "zsh: removing old $prezto/$theme_name [OK]"
   rm "$prezto/$theme_name"
 fi
-echo "zsh: $prezto/$theme_name -> $PWD/$theme_name"
+echo "zsh: $prezto/$theme_name -> $PWD/$theme_name [OK]"
 ln -s "$PWD/$theme_name" "$prezto/$theme_name"
