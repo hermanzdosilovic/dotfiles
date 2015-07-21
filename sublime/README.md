@@ -1,10 +1,10 @@
 # dotfiles sublime module
 
-## Install module
+## Link module
 
-    $ dot install sublime
+    $ punkt link sublime
 
-## Remove module
+## Unlink module
 
-    $ dot remove sublime
+    $ punkt unlink sublime
 

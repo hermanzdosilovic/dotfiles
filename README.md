@@ -4,14 +4,14 @@ Herman's configuration files for zsh, git, sublime, and more.
 ## Install
 
     $ git clone https://github.com/hermanzdosilovic/dotfiles.git ~/.dotfiles
-    $ sudo ln -s ~/.dotfiles/dot.sh /usr/local/bin/dot
+    $ sudo ln -s ~/.dotfiles/punkt.sh /usr/local/bin/punkt
 
 ## Usage
 
-`dot {install|remove} [module ...]`
+`usage: punkt { {link|unlink [module ...]} | update }`
 
-* `dot {install|remove}` will install/remove all modules
-* `dot {install|remove} module1 module2 module3` will install/remove modules: *module1*, *module2*, *module3*
+* `punkt {link|unlink}` will link/unlink all modules
+* `punkt {link|unlink} module1 module2 module3` will link/unlink modules: *module1*, *module2*, *module3*
 
 ## Modules and Their Dependencies
 
@@ -24,11 +24,10 @@ Herman's configuration files for zsh, git, sublime, and more.
 
 ## Update
 
-    $ cd ~/.dotfiles
-    $ git pull
+    $ punkt update
 
 ## Remove
 
-    $ dot remove
-    $ sudo rm /usr/local/bin/dot
+    $ punkt unlink
+    $ sudo rm /usr/local/bin/punkt
     $ rm -rf ~/.dotfiles

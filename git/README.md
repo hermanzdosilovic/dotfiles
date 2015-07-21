@@ -1,10 +1,9 @@
 # dotfiles git module
 
-## Install module
+## Link module
 
-    $ dot install git
+    $ punkt link git
 
-## Remove module
+## Unlink module
 
-    $ dot remove git
-
+    $ punkt unlink git

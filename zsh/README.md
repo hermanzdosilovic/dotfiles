@@ -1,12 +1,12 @@
 # dotfiles zsh module
 
-## Install module
+## Link module
 
-    $ dot install zsh
+    $ punkt link zsh
 
-## Remove module
+## Unlink module
 
-    $ dot remove zsh
+    $ punkt unlink zsh
 
 ## [My custom prompt](https://github.com/hermanzdosilovic/dotfiles/blob/master/zsh/prompt_herman_setup)
 
