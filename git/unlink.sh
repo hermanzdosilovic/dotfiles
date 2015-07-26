@@ -7,3 +7,12 @@ if [[ -f "$HOME/.gitconfig" ]] || [[ -h "$HOME/.gitconfig" ]]; then
 else
   echo "git: $HOME/.gitconfig was already deleted"
 fi
+
+
+# .gitignore
+if [[ -f "$HOME/.gitignore" ]] || [[ -h "$HOME/.gitignore" ]]; then
+  echo "git: deleting $HOME/.gitignore"
+  rm "$HOME/.gitignore"
+else
+  echo "git: $HOME/.gitignore was already deleted"
+fi
