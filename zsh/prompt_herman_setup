@@ -1,6 +1,8 @@
 _prompt_start_time=$SECONDS
 _command_issued=false
 
+pmodload 'helper'
+
 function prompt_print_elapsed_time {
   local end_time=$(( SECONDS - _prompt_start_time ))
   local hours minutes seconds remainder
@@ -50,19 +52,38 @@ function prompt_herman_setup {
 
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
-  zstyle ':prezto:module:git:info:branch' format '%U%F{cyan}%b%f%u'
-  zstyle ':prezto:module:git:info:clean' format ' %F{green}✔%f '
-  zstyle ':prezto:module:git:info:dirty' format ' %F{red}✗%f '
+  zstyle ':prezto:module:git:info:branch' format ' %U%F{cyan}%b%f%u'
+  zstyle ':prezto:module:git:info:clean' format ' %F{green}●%f '
+  zstyle ':prezto:module:git:info:dirty' format ' %F{red}●%f '
   zstyle ':prezto:module:git:info:keys' format \
     'prompt'  '%b%C%D' \
     'rprompt' ''
 
   # Set ruby-info parameters.
-  zstyle ':prezto:module:ruby:info:version' format '%B%F{red}%v%f%b'
+  zstyle ':prezto:module:ruby:info:version' format '%F{9}%v%f'
 
   # Define prompts.
-  PROMPT='%F{magenta}%n@%m%f %B%1~ %b$git_info[prompt]%B%F{green}$%f%b '
+  PROMPT='%F{226}%n%f%F{15}%B@%b%f%F{208}%m%f %B%1~%b$git_info[prompt]%F{10}$%f '
   RPROMPT='$ruby_info[version]'
 }
 
 prompt_herman_setup "$@"
+
+# 16 Terminal Colors
+# -- ---------------
+#  0 black
+#  1 red
+#  2 green
+#  3 yellow
+#  4 blue
+#  5 magenta
+#  6 cyan
+#  7 white
+#  8 bright black
+#  9 bright red
+# 10 bright green
+# 11 bright yellow
+# 12 bright blue
+# 13 bright magenta
+# 14 bright cyan
+# 15 bright white
