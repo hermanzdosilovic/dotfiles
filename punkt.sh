@@ -16,7 +16,7 @@ case $1 in
     ;;
 
   update)
-    echo "Updateing dotfiles"
+    echo "Updating dotfiles"
     cd ~/.dotfiles
     git pull origin master
     exit
