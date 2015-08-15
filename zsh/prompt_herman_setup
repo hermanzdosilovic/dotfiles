@@ -63,7 +63,7 @@ function prompt_herman_setup {
   zstyle ':prezto:module:ruby:info:version' format '%F{9}%v%f'
 
   # Define prompts.
-  PROMPT='%F{226}%n%f%F{15}%B@%b%f%F{208}%m%f %B%1~%b$git_info[prompt] %F{10}$%f '
+  PROMPT='%B%1~%b$git_info[prompt] %F{10}$%f '
   RPROMPT='$ruby_info[version]'
 }
 
