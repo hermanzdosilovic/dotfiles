@@ -37,13 +37,17 @@ function prompt_herman_precmd {
 function gauss_info {
   if [[ -f '.gauss' ]]; then
     source '.gauss'
-    _in_gauss_project="$(git rev-parse --show-toplevel)"
+    local gauss_project_path="$(git rev-parse --show-toplevel 2> /dev/null)"
   fi
 
-  if [[ -n $git_info && $_in_gauss_project == $(git rev-parse --show-toplevel) ]]; then
+  if [[ -n $git_info && $gauss_project_path == "$(git rev-parse --show-toplevel 2> /dev/null)" ]]; then
+    space=""
+    if [[ -n $TASK ]]; then
+      space=" "
+    fi
     gauss_prompt=" %F{13}$TASK%f"
   else
-    _in_gauss_project=""
+    gauss_project_path=""
     gauss_prompt=""
   fi
 }
