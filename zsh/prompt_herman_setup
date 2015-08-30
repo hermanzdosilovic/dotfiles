@@ -28,10 +28,25 @@ function prompt_herman_precmd {
   fi
   _command_issued=false
 
+
   git-info
   ruby-info
+  gauss_info
 }
 
+function gauss_info {
+  if [[ -f '.gauss' ]]; then
+    source '.gauss'
+    _in_gauss_project=true
+  fi
+
+  if [[ -n $git_info && $_in_gauss_project = true ]]; then
+    gauss_prompt=" %F{13}$TASK%f"
+  else
+    _in_gauss_project=false
+    gauss_prompt=""
+  fi
+}
 
 function prompt_herman_preexec {
   _prompt_start_time=$SECONDS
@@ -56,14 +71,14 @@ function prompt_herman_setup {
   zstyle ':prezto:module:git:info:clean' format ' %F{green}●%f'
   zstyle ':prezto:module:git:info:dirty' format ' %F{red}●%f'
   zstyle ':prezto:module:git:info:keys' format \
-    'prompt'  '%b%C%D' \
+    'prompt'  "%b%C%D" \
     'rprompt' ''
 
   # Set ruby-info parameters.
   zstyle ':prezto:module:ruby:info:version' format '%F{9}%v%f'
 
   # Define prompts.
-  PROMPT='%B%1~%b$git_info[prompt] %F{10}$%f '
+  PROMPT='%B%1~%b$gauss_prompt$git_info[prompt] %F{10}$%f '
   RPROMPT='$ruby_info[version]'
 }
 
