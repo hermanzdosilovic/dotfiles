@@ -4,6 +4,7 @@ FILES=(
   .gitconfig
   .gitignore
   .tmux.conf
+  .vim
   .vimrc
 )
 
