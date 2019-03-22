@@ -5,6 +5,6 @@
   default = current
 [alias]
   st = status
-  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  hist = log --abbrev=8 --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 [core]
   excludesfile = ~/.gitignore
