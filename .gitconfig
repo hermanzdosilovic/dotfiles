@@ -8,3 +8,8 @@
   hist = log --abbrev=8 --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 [core]
   excludesfile = ~/.gitignore
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
