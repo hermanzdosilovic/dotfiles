@@ -1,6 +1,7 @@
 #!/bin/sh
 
 FILES=(
+  .bashrc
   .gitconfig
   .gitignore
   .tmux.conf
