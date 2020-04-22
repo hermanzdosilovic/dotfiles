@@ -31,3 +31,5 @@ alias la="ls -la"
 alias ll="ls -l"
 alias ls="ls --color=auto"
 alias open="xdg-open"
+
+export PATH="$HOME/.local/bin:$PATH"
