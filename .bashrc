@@ -31,5 +31,6 @@ alias la="ls -la"
 alias ll="ls -l"
 alias ls="ls --color=auto"
 alias open="xdg-open"
+alias dimgs="docker images --format \"table{{.ID}}\t{{.Repository}}:{{.Tag}}\t{{.CreatedAt}}\t{{.Size}}\""
 
 export PATH="$HOME/.local/bin:$PATH"
