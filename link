@@ -6,6 +6,7 @@ FILES=(
   .curlrc
   .gitconfig
   .gitignore
+  .tmux
   .tmux.conf
   .vim
   .vimrc
