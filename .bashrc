@@ -20,19 +20,28 @@ parse_git_branch() {
   fi
 }
 
+[[ $(uname -s) == "Linux" ]] && is_linux=true || is_linux=false
+if [[ $is_linux == true ]]; then
+    export BROWSER=/usr/bin/google-chrome-stable
+    alias ls="ls --color=auto"
+    alias open="xdg-open"
+else
+    alias ls="ls -G"
+    export PATH="/Applications/CMake.app/Contents/bin:$PATH"
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+fi
+
 export PS1="\[\033[01;32m\]\u\[\e[m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\[\e[93m\]\`parse_git_branch\`\[\e[m\]\\$ "
 
-export BROWSER=/usr/bin/google-chrome-stable
 export EDITOR=/usr/bin/vim
 
 alias alert="notify-send 'Done!' 'Your command in terminal has finished.'; paplay ~/Workspace/dotfiles/horn.wav"
 alias docker-clear-none="docker rmi \$(docker images | grep none | awk '{ print \$3 }')"
 alias la="ls -la"
 alias ll="ls -l"
-alias ls="ls --color=auto"
-alias open="xdg-open"
 alias dimgs="docker images --format \"table{{.ID}}\t{{.Repository}}:{{.Tag}}\t{{.CreatedAt}}\t{{.Size}}\""
 
 export PATH="$HOME/.local/bin:$PATH"
+export NODE_PATH="$NODE_PATH:$HOME/.npm/lib/node_modules"
 
 complete -C /usr/bin/mcli mcli
