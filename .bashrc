@@ -29,6 +29,7 @@ else
     alias ls="ls -G"
     export PATH="/Applications/CMake.app/Contents/bin:$PATH"
     export BASH_SILENCE_DEPRECATION_WARNING=1
+    alias nproc="sysctl -n hw.logicalcpu"
 fi
 
 export PS1="\[\033[01;32m\]\u\[\e[m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\[\e[93m\]\`parse_git_branch\`\[\e[m\]\\$ "
@@ -41,7 +42,7 @@ alias la="ls -la"
 alias ll="ls -l"
 alias dimgs="docker images --format \"table{{.ID}}\t{{.Repository}}:{{.Tag}}\t{{.CreatedAt}}\t{{.Size}}\""
 
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.npm/bin:$PATH"
 export NODE_PATH="$NODE_PATH:$HOME/.npm/lib/node_modules"
 
 complete -C /usr/bin/mcli mcli
