@@ -7,7 +7,7 @@
 
 if [[ -z $SSH_AUTH_SOCK ]]; then
   eval `ssh-agent -s`
-  ssh-add ~/.ssh/id_rsa
+  [[ -f ~/.ssh/id_rsa ]] && ssh-add ~/.ssh/id_rsa
 fi
 
 parse_git_branch() {
