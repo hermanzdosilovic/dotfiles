@@ -42,7 +42,7 @@ alias la="ls -la"
 alias ll="ls -l"
 alias dimgs="docker images --format \"table{{.ID}}\t{{.Repository}}:{{.Tag}}\t{{.CreatedAt}}\t{{.Size}}\""
 
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.npm/bin:$PATH"
+export PATH="$HOME/go/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.npm/bin:$PATH"
 export NODE_PATH="$NODE_PATH:$HOME/.npm/lib/node_modules"
 
 complete -C /usr/bin/mcli mcli
